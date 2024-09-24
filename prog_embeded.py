@@ -69,6 +69,7 @@ def verificar_mensagem_gerar_resposta(mensagem_usuario):
     elif resultado == 'positivo' or 'negativo':
         return "Ok."
 
-print(verificar_mensagem_gerar_resposta("Olá meu querido"))
-print(verificar_mensagem_gerar_resposta("A bateria desliga toda vez que uso o limpador de parabrisa"))
-print(verificar_mensagem_gerar_resposta("Sim"))
+if __name__ == "__main__":
+    print(verificar_mensagem_gerar_resposta("Olá meu querido"))
+    print(verificar_mensagem_gerar_resposta("A bateria desliga toda vez que uso o limpador de parabrisa"))
+    print(verificar_mensagem_gerar_resposta("Sim"))
