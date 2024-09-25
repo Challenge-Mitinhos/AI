@@ -7,6 +7,11 @@ embed = hub.load("https://www.kaggle.com/models/google/universal-sentence-encode
 
 lista = lista_frases.frases
 
+problema_bateria = lista_frases.problemas_bateria
+problema_freios = lista_frases.problemas_freios
+problema_motor = lista_frases.problemas_motor
+problema_suspensao = lista_frases.problemas_suspensao
+
 listaf = []
 for i in range(len(lista)):
     if len(lista[i]) == 3:
@@ -17,10 +22,10 @@ for i in range(len(lista)):
         listaf.append([lista[i][0], lista[i][1], x])
 
 
-def analisar_frase(frase):
+def analisar_frase(frase, lista_frases):
     x = embed(frase)
     teste = []
-    for i in listaf:
+    for i in lista_frases:
         if len(i) == 4:
             resi = np.inner(x, i[3])
             teste.append([i[0], resi, i[1], i[2]])
@@ -57,17 +62,28 @@ def obter_resultado(lista_resultados_embeds):
 # print(obter_resultado(analisar_frase(frase)))
 # if obter_resultado(analisar_frase(frase))[0][0] == 'descrição de problema':
 #     print(obter_resultado(analisar_problema(frase)))
+categoria_mensagem_anterior = None
 
 def verificar_mensagem_gerar_resposta(mensagem_usuario):
-    resultado = obter_resultado(analisar_frase(mensagem_usuario))[0][0]
+    global categoria_mensagem_anterior
+    resposta = None
 
+    resultado = obter_resultado(analisar_frase(mensagem_usuario, listaf))[0][0]
+
+    if categoria_mensagem_anterior == 'descrição de problema':
+        diagnostico = obter_resultado()
     if resultado == 'descrição de problema':
         categoria_de_problema = obter_resultado(analisar_problema(mensagem_usuario))[0][0]
-        return f"Você parece ter um problema de {categoria_de_problema}"
+        resposta = f"Você parece ter um problema de {categoria_de_problema}"
     elif resultado == 'saudação':
-        return "Olá, eu sou o AutoCare Bot! Como posso te ajudar?"
+        resposta = "Olá, eu sou o AutoCare Bot! Como posso te ajudar?"
     elif resultado == 'positivo' or 'negativo':
-        return "Ok."
+        resposta = "Ok."
+    
+    categoria_mensagem_anterior = [resultado]
+    return resposta
+
+    
 
 if __name__ == "__main__":
     print(verificar_mensagem_gerar_resposta("Olá meu querido"))
