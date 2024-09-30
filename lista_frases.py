@@ -1,6 +1,8 @@
 frases = [
     ['positivo', 'Sim'],
+    ['positivo', 'positivo'],
     ['negativo', 'Não'],
+    ['negativo', 'negativo'],
 
     ['saudação', 'Oi!'],
     ['saudação', 'Olá!'],
@@ -308,8 +310,12 @@ problemas_freios = [
     ["Freios desgastados rapidamente", "inspeção da linha de fluido de freio", 320],
     ["Barulho metálico ao pressionar o freio", "verificação das pinças e pastilhas", 290],
     ["Freios arrastando mesmo sem acionar", "reparação das pinças de freio", 400],
-    ["Falha completa do freio ao pisar", "reparo ou troca do cilindro mestre", 600]
-    
+    ["Falha completa do freio ao pisar", "reparo ou troca do cilindro mestre", 600],
+    ["Ruído contínuo durante a frenagem", "troca das pastilhas de freio", 240],
+    ["Falta de resposta imediata ao frear", "ajuste do cilindro mestre", 280],
+    ["Desgaste irregular nas pastilhas de freio", "inspeção e substituição das pastilhas", 260],
+    ["Trechos longos sem resposta dos freios", "reparo do sistema hidráulico de freio", 320],
+    ["Pedal de freio com excesso de folga", "ajuste no curso do pedal de freio", 230]
 ]
 
 problemas_suspensao = [
@@ -336,7 +342,7 @@ problemas_suspensao = [
     ["Estalos ao passar por buracos", "reparo das bandejas da suspensão", 400],
     ["Suspensão traseira batendo", "substituição dos batentes da suspensão", 350],
     ["Suspensão com ruído ao carregar peso", "verificação das molas e amortecedores", 300],
-    ["Suspensão abaixando sozinha", "diagnóstico e troca de molas", 450],
+    ["Suspensão abaixando sozinha", "diagnóstico detalhado e troca de molas", 450],
     ["Oscilação ao fazer curvas", "verificação e ajuste da barra estabilizadora", 320],
     ["Balanço excessivo em terrenos irregulares", "revisão da suspensão completa", 500],
     ["Amortecedor com folga", "troca de buchas e pivôs", 380],
@@ -346,13 +352,18 @@ problemas_suspensao = [
     ["Suspensão ruidosa ao frear", "inspeção e reparo das buchas da suspensão", 350],
     ["Estalos constantes na suspensão", "substituição das juntas homocinéticas", 500],
     ["Suspensão traseira solta", "substituição de molas ou amortecedores traseiros", 550],
-    ["Barulho de batida seca ao passar em lombadas", "verificação e troca das buchas", 360]
+    ["Barulho de batida seca ao passar em lombadas", "verificação e troca das buchas", 360],
+    ["Suspensão fazendo ruídos metálicos", "revisão das buchas da suspensão", 400],
+    ["Oscilação do veículo após passar por obstáculos", "ajuste da suspensão", 370],
+    ["Suspensão traseira baixa após carga excessiva", "substituição das molas traseiras", 450],
+    ["Pneus desgastados irregularmente", "balanceamento e alinhamento da suspensão", 180],
+    ["Vibração constante no volante ao dirigir", "revisão dos amortecedores", 300]
 ]
 
 problemas_motor = [
-    ["Falta de potência no motor", "diagnóstico e ajuste do motor", 400],
+    ["Falta de potência no motor", "diagnóstico detalhado e ajuste do motor", 400],
     ["Consumo excessivo de combustível", "verificação da injeção eletrônica", 300],
-    ["Ruídos anormais no motor", "diagnóstico de componentes internos", 450],
+    ["Ruídos anormais no motor", "diagnóstico detalhado de componentes internos", 450],
     ["Motor superaquecendo", "reparo no radiador ou troca de termostato", 350],
     ["Dificuldade para dar partida", "troca de velas ou cabos", 250],
     ["Vazamento de óleo do motor", "troca de juntas e vedação", 400],
@@ -363,7 +374,7 @@ problemas_motor = [
     ["Motor batendo ao acelerar", "diagnóstico de pistões ou bielas", 700],
     ["Perda de aceleração ao subir ladeiras", "verificação de bomba de combustível", 300],
     ["Motor falhando em baixa rotação", "troca de sensor de rotação", 450],
-    ["Trepidação excessiva do motor", "troca dos coxins do motor", 500]
+    ["Trepidação excessiva do motor", "troca dos coxins do motor", 500],
     ["Motor apagando em marcha lenta", "ajuste da injeção eletrônica", 400],
     ["Ruído ao ligar o motor a frio", "verificação das velas de ignição", 250],
     ["Perda de potência ao acelerar", "reparação da bomba de combustível", 350],
@@ -383,7 +394,12 @@ problemas_motor = [
     ["Fumaça azul no escapamento", "verificação de consumo de óleo", 600],
     ["Queda de rotação ao frear", "verificação da válvula de controle de ar", 400],
     ["Estalos ao ligar o motor", "substituição de correia dentada", 500],
-    ["Motor vibrando excessivamente em altas velocidades", "balanceamento de componentes do motor", 550]
+    ["Motor vibrando excessivamente em altas velocidades", "balanceamento de componentes do motor", 550],
+    ["Motor trepidando ao acelerar", "verificação dos coxins", 380],
+    ["Vazamento de óleo constante no motor", "troca de juntas e selos", 420],
+    ["Motor apresentando falhas em alta rotação", "ajuste da injeção eletrônica", 300],
+    ["Cheiro forte de combustível no habitáculo", "verificação de vazamento no sistema de combustível", 340],
+    ["Dificuldade em manter o motor em marcha lenta", "ajuste no sistema de injeção", 280]
 ]
 
 problemas_bateria = [
@@ -420,5 +436,11 @@ problemas_bateria = [
     ["Carro desligando ao ficar parado", "verificação da bateria e alternador", 500],
     ["Cabos de bateria superaquecidos", "substituição dos cabos", 250],
     ["Falha intermitente de componentes elétricos", "revisão completa do sistema elétrico", 500],
-    ["Avaria no conector da bateria", "substituição do conector", 200]
+    ["Avaria no conector da bateria", "substituição do conector", 200],
+    ["Bateria desgastada após vários anos de uso", "troca de bateria", 400],
+    ["Bateria com problemas recorrentes de carga", "troca de bateria com diagnóstico elétrico", 450],
+    ["Bateria incapaz de segurar a carga em dias frios", "substituição da bateria", 400],
+    ["Troca de bateria como parte da manutenção regular", "troca preventiva de bateria", 380],
+    ["Bateria não suporta carga após desligamento do motor", "troca de bateria com revisão completa", 420],
+    ["Luzes do painel acendem por um instante mas o motor não liga", "troca de bateria com revisão completa", 420]
 ]
